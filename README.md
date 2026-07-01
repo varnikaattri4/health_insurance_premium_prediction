@@ -6,7 +6,7 @@ This project predicts individual health insurance charges using machine learning
 
 ## Project Overview
 
-Health insurance premiums are influenced by factors such as age, BMI, smoking status, and family size. The objective of this project is to analyze these factors and develop machine learning models capable of accurately predicting insurance charges.
+Health insurance premiums are influenced by factors such as age, BMI, smoking status, and family size. The objective of this project was to analyze these factors and develop machine learning models capable of accurately predicting insurance charges.
 
 The project compares multiple regression algorithms and evaluates their performance using standard regression metrics.
 
@@ -14,7 +14,11 @@ The project compares multiple regression algorithms and evaluates their performa
 
 ## Dataset
 
-The project uses the **Medical Cost Personal Dataset**, containing **1,338 records** with the following features:
+The project uses the **Medical Cost Personal Dataset**, containing **1,338 records** with the following features.
+
+**Source:** https://www.kaggle.com/datasets/mirichoi0218/insurance
+
+The dataset includes the following features:
 
 | Feature | Description |
 |---------|-------------|
