@@ -1,35 +1,73 @@
-# 🏥 Health Insurance Premium Prediction
+# Health Insurance Premium Prediction
+
+This project predicts individual health insurance charges using machine learning regression models. It covers the complete data science workflow, including data exploration, visualization, preprocessing, model building, evaluation, and interpretation.
+
+---
 
 ## Project Overview
 
-This project predicts health insurance charges using machine learning techniques. It includes data preprocessing, exploratory data analysis, feature engineering, model training, performance evaluation, and comparison of multiple regression models to identify the most accurate predictor.
+Health insurance premiums are influenced by factors such as age, BMI, smoking status, and family size. The objective of this project is to analyze these factors and develop machine learning models capable of accurately predicting insurance charges.
+
+The project compares multiple regression algorithms and evaluates their performance using standard regression metrics.
 
 ---
 
 ## Dataset
 
-- **Dataset:** Medical Cost Personal Dataset
-- **Target Variable:** `charges`
-- **Features:** Age, Sex, BMI, Children, Smoker Status, Region
+The project uses the **Medical Cost Personal Dataset**, containing **1,338 records** with the following features:
+
+| Feature | Description |
+|---------|-------------|
+| Age | Age of the insured individual |
+| Sex | Gender |
+| BMI | Body Mass Index |
+| Children | Number of dependents |
+| Smoker | Smoking status |
+| Region | Residential region |
+| Charges | Medical insurance charges (Target Variable) |
 
 ---
 
-## Project Workflow
+## Exploratory Data Analysis
 
-- Imported required libraries
-- Performed data understanding and exploration
-- Checked for missing values and duplicates
-- Conducted exploratory data analysis (EDA)
+The dataset was explored to understand the distribution of variables, relationships between features, and factors affecting insurance charges.
+
+### Correlation Heatmap
+
+![Correlation Heatmap](images/correlation_heatmap.png)
+
+**Observation**
+
+- Smoking status has the strongest correlation with insurance charges.
+- Age and BMI also show a positive relationship with medical costs.
+
+---
+
+### BMI Distribution
+
+![BMI Distribution](images/bmi_distribution.png)
+
+**Observation**
+
+- BMI follows an approximately normal distribution.
+- Most observations lie between 25 and 35, with relatively few extreme values.
+
+---
+
+## Data Preprocessing
+
+The following preprocessing steps were performed:
+
+- Checked data types
+- Verified missing values and duplicates
 - Encoded categorical variables
-- Split the data into training and testing sets
-- Built and evaluated multiple machine learning models
-- Compared model performance
-- Analyzed feature importance
-- Saved the best-performing model
+- Split the dataset into training and testing sets
 
 ---
 
-## Models Used
+## Models Implemented
+
+The following regression models were trained and evaluated:
 
 - Linear Regression
 - Decision Tree Regressor
@@ -37,27 +75,48 @@ This project predicts health insurance charges using machine learning techniques
 
 ---
 
-## Results
+## Model Performance
 
 | Model | MAE | RMSE | R² Score |
-|-------|------:|------:|------:|
+|------|------:|------:|------:|
 | Linear Regression | 4181.19 | 5796.28 | 0.7836 |
-| Decision Tree | 3384.47 | 6861.24 | 0.6968 |
-| Random Forest | **2544.64** | **4573.55** | **0.8653** |
+| Decision Tree Regressor | 3384.47 | 6861.24 | 0.6968 |
+| Random Forest Regressor | **2544.64** | **4573.55** | **0.8653** |
 
-**Best Model:** Random Forest Regressor
+The Random Forest model achieved the best overall performance, producing the lowest prediction error and the highest R² score.
 
 ---
 
-## Visualizations
-
-### Actual vs Predicted Charges
+## Actual vs Predicted Values
 
 ![Actual vs Predicted](images/actual_vs_predicted.png)
 
-### Feature Importance
+**Observation**
+
+The predicted values closely follow the actual insurance charges, indicating that the Random Forest model captures the relationship between the input features and insurance costs effectively.
+
+---
+
+## Feature Importance
 
 ![Feature Importance](images/feature_importance.png)
+
+**Observation**
+
+Smoking status is the most influential feature, followed by age and BMI. These variables contribute the most to predicting insurance charges.
+
+---
+
+## Technologies Used
+
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Scikit-learn
+- Joblib
+- Jupyter Notebook
 
 ---
 
@@ -71,6 +130,8 @@ health_insurance_premium_prediction/
 │
 ├── images/
 │   ├── actual_vs_predicted.png
+│   ├── bmi_distribution.png
+│   ├── correlation_heatmap.png
 │   └── feature_importance.png
 │
 ├── models/
@@ -86,38 +147,30 @@ health_insurance_premium_prediction/
 
 ---
 
-## Technologies Used
+## Getting Started
 
-- Python
-- Pandas
-- NumPy
-- Matplotlib
-- Scikit-learn
-- Joblib
-- Jupyter Notebook
+Clone the repository:
 
----
+```bash
+git clone https://github.com/varnikaattri4/health_insurance_premium_prediction.git
+```
 
-## How to Run
+Install the required packages:
 
-1. Clone the repository.
-2. Install the required libraries:
-   ```
-   pip install -r requirements.txt
-   ```
-3. Open the notebook:
-   ```
-   notebooks/insurance_analysis.ipynb
-   ```
-4. Run all cells to reproduce the analysis and results.
+```bash
+pip install -r requirements.txt
+```
+
+Open the notebook inside the `notebooks` folder and run all cells.
 
 ---
 
 ## Future Improvements
 
-- Perform hyperparameter tuning for improved accuracy.
-- Experiment with advanced ensemble models such as XGBoost and LightGBM.
-- Deploy the model as a web application using Streamlit or Flask.
+- Perform hyperparameter tuning
+- Apply cross-validation
+- Compare additional ensemble models such as XGBoost and LightGBM
+- Deploy the model using Streamlit
 
 ---
 
